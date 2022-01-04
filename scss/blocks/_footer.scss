@@ -1,0 +1,137 @@
+.footer {
+   background-image: url(../img/footer_bg.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   &__about {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__review {
+      padding: 97px 0 126px 0;
+      text-align: center;
+
+      &-comment {
+         padding: 30px 0 0 0;
+         width: 360px;
+         font-style: italic;
+         font-size: 20px;
+         line-height: 24px;
+         color: $black;
+      }
+   }
+}
+
+
+.subscribe {
+   padding: 150px 0 156px 0;
+
+   &__heading {
+      font-size: 24px;
+      line-height: 167%;
+      font-weight: bold;
+      text-align: center;
+      color: $black;
+      text-transform: uppercase;
+      height: 30px;
+   }
+
+   &__text {
+      font-size: 18px;
+      line-height: 167%;
+      text-align: center;
+      color: $black;
+      text-transform: uppercase;
+   }
+
+   &__form {
+      display: flex;
+      padding: 27px 0 0 0;
+      justify-content: center;
+
+      &-input {
+         border-radius: 100px 2px 2px 100px;
+         background-color: #E1E1E1;
+         border: none;
+         padding: 10px 64px 10px 22px;
+         opacity: 0.67;
+      }
+
+      &-btn {
+         border-radius: 0px 100px 100px 0px;
+         background-color: $pink-text;
+         border: none;
+         color: $white-text;
+         padding: 16px 19px 16px 19px;
+         font-size: 14px;
+         line-height: 17px;
+      }
+   }
+
+   &__form:hover &__form-btn,
+   &__form:focus-within &__form-btn {
+      background-color: $pink-effects;
+      cursor: pointer;
+      transition: $animation-speed;
+   }
+
+   &__form:active &__form-btn {
+      background-color: $pink-text;
+   }
+
+   &__form-input:focus-visible,
+   &__form:focus-visible,
+   &__form-btn:focus {
+      outline: 1px solid $pink-text;
+   }
+}
+
+
+.box {
+   display: flex;
+   justify-content: space-between;
+
+   &__wrapper {
+      background-color: $black;
+   }
+}
+
+.copy {
+   color: $white-text;
+   align-items: center;
+   padding: 30px 0 30px 0;
+}
+
+
+.socials {
+   padding: 24px 0 24px 0;
+
+   &__list {
+      display: flex;
+   }
+
+   &__list :last-child {
+      padding: 0;
+   }
+
+   &__item {
+      padding: 0 7px 0 0;
+   }
+
+   &__item-link:hover .white-icon,
+   &__item-link:focus-visible .white-icon {
+      fill: $pink-btn;
+      transition: $animation-speed;
+   }
+
+   &__item-link:hover .black-icon,
+   &__item-link:focus-visible .black-icon {
+      fill: $white-text;
+      transition: $animation-speed;
+   }
+
+   &__item-link:active .white-icon {
+      fill: $pink-effects;
+   }
+}

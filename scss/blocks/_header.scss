@@ -1,0 +1,125 @@
+.header {
+   background-color: $black;
+   min-height: 75px;
+
+   &__link {
+      text-decoration: none;
+      margin: 0 0 0 33px;
+   }
+
+   &__wrp {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0 18px;
+   }
+
+   &__logo-form-wrp {
+      display: flex;
+   }
+
+   &__search-btn {
+      margin: 8px 0 0 41px;
+      background-color: transparent;
+      border: none;
+   }
+
+   &__search-input {
+      max-width: 0;
+      overflow: hidden;
+      flex-grow: 1;
+
+      transition: max-width .2s;
+   }
+
+   &__form-search--active {
+      max-width: 100vw;
+   }
+
+   &-input {
+      display: none;
+      background-color: $black;
+      border: none;
+      border: 1px solid $white-text;
+   }
+
+   &__menu-btn {
+      border: none;
+      background-color: transparent;
+   }
+
+   &__nav {
+      height: 764px;
+      background-color: $white-text;
+      max-width: 100%;
+      position: absolute;
+      right: 0;
+      z-index: 1;
+      box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+      overflow: hidden;
+
+      transition: max-width .9s;
+   }
+
+   &__exit-btn {
+      background-color: transparent;
+      border: none;
+      align-self: flex-end;
+   }
+
+   &__nav-title {
+      padding: 9px 0 0 0;
+      font-weight: bold;
+      line-height: 17px;
+      text-transform: uppercase;
+      color: $black;
+   }
+
+   &__nav-list {
+      padding: 24px 0 0 0;
+   }
+
+   &__nav-item:not(:first-child) {
+      padding: 20px 0 0 0;
+   }
+
+   &__form-search--active {
+      max-width: 100vw;
+   }
+
+   &__menu-btn:hover .white-icon,
+   &__search-btn:hover .white-icon,
+   &__link:hover .white-icon,
+   &__exit-btn:hover .exit-icon {
+      fill: $pink-color;
+      cursor: pointer;
+
+      transition: $animation-speed;
+   }
+
+
+   &__menu-btn:focus-visible .white-icon,
+   &__search-btn:focus-visible .white-icon,
+   &__link:focus-visible .white-icon,
+   &__exit-btn:focus-visible .exit-icon {
+      fill: $pink-color;
+      cursor: pointer;
+   }
+
+
+   &__menu-btn:active .white-icon,
+   &__search-btn:active .white-icon,
+   &__link:active .white-icon {
+      fill: $pink-effects;
+   }
+
+   &__exit-btn:active .exit-icon {
+      fill: $pink-effects;
+   }
+}
+
+.menu__wrapper {
+   display: flex;
+   flex-direction: column;
+   padding: 16px 16px 0 34px;
+}
