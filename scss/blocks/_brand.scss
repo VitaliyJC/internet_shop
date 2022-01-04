@@ -1,0 +1,55 @@
+.brand {
+   display: flex;
+   margin: 0 0 63px;
+
+   &__img {
+      background-color: $pink-bkg;
+   }
+
+   &__title {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 58px;
+      text-transform: uppercase;
+
+      &-wrp {
+         flex-grow: 1;
+         background-color: $pink-bkg;
+         display: flex;
+         align-items: center;
+         padding: 0 0 0 92px;
+         position: relative;
+      }
+   }
+
+   &__title-wrp {
+      flex-grow: 1;
+      background-color: $pink-bkg;
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 92px;
+      position: relative;
+   }
+
+   &__title::before {
+      background: $pink-color;
+      width: 10px;
+      height: 92px;
+      position: absolute;
+      top: 336px;
+      left: 60px;
+      content: '';
+   }
+
+   &__subtitle {
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 38px;
+      display: block;
+
+      &-pink {
+         color: $pink-color;
+      }
+   }
+}
