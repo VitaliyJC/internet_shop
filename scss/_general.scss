@@ -1,13 +1,11 @@
 body {
-   font-family: 'Lato';
-   font-style: normal;
-   font-size: 14px;
-   line-height: 16px;
+   @include font (14px, 16px, normal);
+   font-family: 'Lato', sans-serif;
    box-sizing: border-box;
 }
 
 .container {
-   max-width: 1140px;
+   max-width: 72%;
    margin: 0 auto;
 }
 
@@ -22,4 +20,16 @@ body {
    clip: rect(0 0 0 0);
    clip-path: inset(50%);
    margin: -1px;
+}
+
+@media (max-width: $tablet-width) {
+   .container {
+      max-width: 96%;
+   }
+}
+
+@media (max-width: $mobile-width) {
+   .container {
+      max-width: 92%;
+   }
 }

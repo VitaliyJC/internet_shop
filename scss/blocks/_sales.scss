@@ -7,13 +7,29 @@
    }
 
    &__item {
-      width: 360px;
+      width: 31%;
       min-height: 260px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       border: none;
+      background-size: cover;
+
+      @include tablet {
+         min-height: 168px;
+      }
+
+      @include mobile {
+         width: 100%;
+         min-height: 249px;
+      }
+
+      &:not(:nth-child(1)) {
+         @include mobile {
+            margin: 32px 0 0 0;
+         }
+      }
 
       &--women {
          position: relative;
@@ -37,12 +53,20 @@
          background-repeat: no-repeat;
          min-height: 180px;
          margin: 30px 0 0 0;
-         width: 1140px;
+         width: 100%;
+
+         @include tablet {
+            min-height: 116px;
+         }
+
+         @include mobile {
+            min-height: 111px;
+            background-position: -180px;
+         }
       }
 
       &-text {
-         font-size: 16px;
-         line-height: 19px;
+         @include font(16px, 19px);
          color: $white-text;
          text-transform: uppercase;
          text-align: center;
@@ -51,9 +75,7 @@
       &-title {
          text-transform: uppercase;
          color: $pink-text;
-         font-size: 24px;
-         line-height: 29px;
-         font-weight: bold;
+         @include font(24px, 29px, 700);
       }
 
       /* overlay_sales_start */

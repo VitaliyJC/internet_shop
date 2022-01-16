@@ -65,12 +65,12 @@
       background-color: transparent;
       border: none;
       align-self: flex-end;
+      font-family: "Lato", sans-serif;
    }
 
    &__nav-title {
+      @include font (100%, 17px, 900);
       padding: 9px 0 0 0;
-      font-weight: bold;
-      line-height: 17px;
       text-transform: uppercase;
       color: $black;
    }
@@ -122,4 +122,28 @@
    display: flex;
    flex-direction: column;
    padding: 16px 16px 0 34px;
+}
+
+@media (max-width: $tablet-width) {
+
+   .header {
+
+      &__logo-form-wrp {
+         margin: 0 0 0 16px;
+      }
+   }
+}
+
+@media (max-width: $mobile-width) {
+
+   .header {
+
+      &__logo-form-wrp {
+         margin: 0;
+      }
+
+      &__link {
+         display: none;
+      }
+   }
 }
