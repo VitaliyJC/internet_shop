@@ -3,9 +3,18 @@
 .products {
    padding: 96px 0 0 0;
 
+   @include tablet {
+      padding: 155px 0 0 0;
+   }
+
+   @include mobile {
+      padding: 64px 0 0 0;
+   }
+
    &__title {
-      font-size: 30px;
-      line-height: 36px;
+
+      @include font(30px, 36px);
+
       text-align: center;
    }
 
@@ -13,13 +22,31 @@
       padding: 6px 0 48px 0;
       text-align: center;
       color: $grey-text;
+
+      @include tablet {
+         padding: 3px 0 73px 0;
+      }
+
+      @include mobile {
+         padding: 0 0 65px 0;
+      }
    }
 
 
    &__list {
-      margin: 0 0 48px 0;
+      margin: 0 0 18px 0;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
+
+      @include tablet {
+         margin: 0 0 16px 0;
+         justify-content: center;
+      }
+
+      @include mobile {
+         margin: 0;
+      }
 
       &-overlay {
          position: relative;
@@ -42,8 +69,37 @@
 
    &__item {
       height: 582px;
-      flex-grow: 1;
+      width: 360px;
       margin: 0 0 30px 0;
+
+      &:not(:nth-child(3n)) {
+         margin: 0 30px 30px 0;
+      }
+
+      &:nth-child(2n) {
+         @include tablet {
+            margin: 0 0 16px 0;
+         }
+      }
+
+      &:not(:nth-child(2n)) {
+         @include tablet {
+            margin: 0 16px 16px 0;
+         }
+
+         &:nth-child(2n) {
+            @include mobile {
+               margin: 0 0 16px 0;
+            }
+         }
+
+         &:not(:last-child) {
+            @include mobile {
+               margin: 0 0 16px 0;
+            }
+         }
+
+      }
 
       &-cart {
          display: none;
@@ -71,10 +127,9 @@
       &-text {
          width: 314px;
          padding: 0 28px 0 16px;
-         font-weight: 300;
-         font-size: 14px;
-         line-height: 17px;
          color: $grey-text;
+
+         @include font(14px, 17px, 300);
       }
 
       &-price {
@@ -153,14 +208,19 @@
       background-color: $white-text-btm;
       padding: 15px 39px;
       text-decoration: none;
-      line-height: 19px;
-      font-size: 16px;
       color: $pink-text;
       border: 1px solid $pink-text;
+      font-family: "Lato", sans-serif;
+
+      @include font(16px, 19px);
 
       &-wrapper {
-         margin: 63px 0 109px 0;
+         margin: 0 0 95px 0;
          text-align: center;
+
+         @include tablet {
+            margin: 0 0 65px 0;
+         }
       }
    }
 
