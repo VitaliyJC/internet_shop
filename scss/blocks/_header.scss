@@ -16,31 +16,38 @@
 
    &__logo-form-wrp {
       display: flex;
+
    }
 
-   &__search-btn {
-      margin: 8px 0 0 41px;
-      background-color: transparent;
-      border: none;
-   }
+   &__search {
+      display: flex;
+      align-items: center;
 
-   &__search-input {
-      max-width: 0;
-      overflow: hidden;
-      flex-grow: 1;
 
-      transition: max-width .2s;
-   }
+      &-btn {
+         margin: 8px 0 0 41px;
+         background-color: transparent;
+         border: none;
+      }
 
-   &__form-search--active {
-      max-width: 100vw;
-   }
+      &-btn:hover+.header__search-form {
+         display: block;
+      }
 
-   &-input {
-      display: none;
-      background-color: $black;
-      border: none;
-      border: 1px solid $white-text;
+      &-form {
+         display: none;
+      }
+
+      &-input {
+         border: none;
+         border-radius: 30px;
+         padding: 10px;
+         width: 200%;
+
+         @include mobile {
+            width: 100%;
+         }
+      }
    }
 
    &__menu-btn {
@@ -81,10 +88,6 @@
 
    &__nav-item:not(:first-child) {
       padding: 20px 0 0 0;
-   }
-
-   &__form-search--active {
-      max-width: 100vw;
    }
 
    &__menu-btn:hover .white-icon,
