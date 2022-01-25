@@ -30,7 +30,7 @@
    }
 
    &__form {
-      padding: 65px 0 95px 0;
+      margin: 65px 0 95px 0;
       max-width: 360px;
 
       @include tablet {
@@ -78,7 +78,7 @@
       }
 
       &-sex:checked {
-         border: 6px solid $grey-text-form
+         border: 6px solid $pink-btn
       }
 
       &-login {
@@ -101,14 +101,26 @@
 
       &-btn {
          color: $white-text;
-         background: $pink-btn;
+         background-color: $pink-btn;
          padding: 17px 29px;
          margin: 40px 0 0 0;
          text-transform: uppercase;
          border: none;
 
          @include font(14px, 17px);
-         font-family: "Lato", sans-serif;
+
+         &:hover {
+            background-color: $pink-effects;
+         }
+
+         &:focus {
+            background-color: $pink-effects;
+            transition: $animation-speed;
+         }
+
+         &:active {
+            background-color: $pink-btn;
+         }
       }
 
       &__radio-text {
@@ -127,7 +139,7 @@
 
 
    &__info {
-      padding: 65px 0 0 128px;
+      margin: 65px 0 0 128px;
       max-width: 46%;
 
       @include tablet {

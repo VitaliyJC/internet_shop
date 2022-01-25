@@ -210,7 +210,6 @@
       text-decoration: none;
       color: $pink-text;
       border: 1px solid $pink-text;
-      font-family: "Lato", sans-serif;
 
       @include font(16px, 19px);
 
@@ -231,14 +230,14 @@
       transition: $animation-speed;
    }
 
-   &__btn:focus {
+   &__btn:focus-visible {
       background-color: $pink-color;
       color: $white-text;
       transition: $animation-speed;
    }
 
    &__btn:active {
-      background: $pink-text;
+      background-color: $pink-text;
    }
 
    &__item:hover .products__item-cart,

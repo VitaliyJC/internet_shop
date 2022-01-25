@@ -4,6 +4,15 @@ body {
    box-sizing: border-box;
 }
 
+input {
+   box-sizing: border-box;
+}
+
+button {
+   font-family: "Lato",
+      sans-serif;
+}
+
 .container {
    max-width: 72%;
    margin: 0 auto;
@@ -20,6 +29,10 @@ body {
    clip: rect(0 0 0 0);
    clip-path: inset(50%);
    margin: -1px;
+}
+
+.sprite {
+   display: none;
 }
 
 @media (max-width: $tablet-width) {
