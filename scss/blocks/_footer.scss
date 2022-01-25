@@ -97,10 +97,9 @@
          &-btn {
             border-radius: 0px 100px 100px 0px;
             background-color: $pink-text;
-            border: none;
+            border: 1px solid $pink-text;
             color: $white-text;
             padding: 16px 19px 16px 19px;
-            font-family: "Lato", sans-serif;
 
             @include font(14px, 17px);
 
@@ -175,18 +174,32 @@
       }
 
       &__item {
-         padding: 0 7px 0 0;
+         margin: 0 7px 0 0;
+         background-color: #fff;
+         width: 32px;
+         height: 32px;
       }
 
-      &__item-link:hover .white-icon,
-      &__item-link:focus-visible .white-icon {
-         fill: $pink-btn;
+      &__item:hover .black-icon,
+      &__item:focus-visible .black-icon {
+         background-color: $pink-btn;
+         transition: $animation-speed;
+      }
+
+      &__item:active .black-icon {
+         background-color: $pink-effects;
          transition: $animation-speed;
       }
 
       &__item-link:hover .black-icon,
       &__item-link:focus-visible .black-icon {
          fill: $white-text;
+         transition: $animation-speed;
+      }
+
+      &__item-link:hover .white-icon,
+      &__item-link:focus-visible .white-icon {
+         fill: $pink-btn;
          transition: $animation-speed;
       }
 
