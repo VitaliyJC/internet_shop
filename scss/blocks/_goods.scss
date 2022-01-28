@@ -1,18 +1,35 @@
 .goods {
    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
    display: flex;
+   justify-content: space-between;
 
    &__img {
+      height: 306px;
+      background-color: $grey-bkg;
+
+      @include mobile {
+         width: 144px;
+         height: 188px;
+      }
 
       &-wrapper {
          background-color: $grey-text-form;
          width: 262px;
          height: 306px;
+
+         @include mobile {
+            width: 144px;
+            height: 188px;
+         }
       }
    }
 
    &__item {
       margin: 42px 0 0 0;
+
+      @include mobile {
+         margin: 25px 0 0 0;
+      }
 
       :not(:first-of-type) {
          margin: 6px 0 0 0;
@@ -20,6 +37,10 @@
 
       &-wrapper {
          margin: 0 0 0 31px;
+
+         @include mobile {
+            margin: 0 0 0 17px;
+         }
       }
 
       &-title {
@@ -28,6 +49,12 @@
          text-transform: uppercase;
          width: 200px;
          color: $black;
+
+         @include mobile {
+            margin: 17px 0 0 0;
+            @include font(16px, 19px);
+            width: 100%;
+         }
       }
 
       &-input {
@@ -40,10 +67,20 @@
          border: 1px solid $grey-border;
          outline: none;
 
+         @include mobile {
+            @include font(10px, 12px);
+            width: 24px;
+            height: 15px;
+         }
+
 
          &::placeholder {
             @include font(18px, 22px);
             color: $grey-text-form;
+
+            @include mobile {
+               @include font(10px, 12px);
+            }
          }
 
          &:focus {
@@ -56,22 +93,25 @@
          background-color: transparent;
          border: none;
 
-         &:hover .exit-icon {
+         @include mobile {
+            margin: 0 0 0 0;
+         }
+
+         &:hover .exit-cart {
             fill: $pink-color;
             cursor: pointer;
          }
 
-         &:focus-visible .exit-icon {
+         &:focus-visible .exit-cart {
             fill: $pink-color;
             cursor: pointer;
          }
 
-         &:active .exit-icon {
+         &:active .exit-cart {
             fill: $pink-effects;
          }
 
          &-warpper {
-            width: 100%;
             text-align: right;
          }
       }
@@ -80,6 +120,10 @@
    &__list {
       @include font(22px, 26px);
       color: $black-cart;
+
+      @include mobile {
+         @include font(16px, 19px)
+      }
    }
 
    &__price {

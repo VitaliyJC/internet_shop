@@ -6,7 +6,12 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
-   <link rel="stylesheet" href="./css/style.css">
+   <link rel="preload" href="./fonts/lato-black.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="./fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="./fonts/lato-italic.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="./fonts/lato-light.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="./fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
 <body>
@@ -19,34 +24,37 @@
 
          <div class="header__logo-form-wrp">
             <a class="header__logo" href="#">
-               <img src="./img/logo.svg" alt="logo">
+               <picture>
+                  <source srcset="./img/logo.webp" type="image/webp">
+                  <img class="header__logo-img" src="./img/logo.png" alt="logo" loading="lazy">
+               </picture>
             </a>
             <section class="header__search">
                <h2 class="visually-hidden">Header search</h2>
-               <button class="header__search-btn" type="submit" id="header__search-btn">
-                  <svg class="white-icon" width="27" height="28">
+               <button class="header__search-btn" type="submit" id="header__search-btn" aria-label="search">
+                  <svg class="white-icon">
                      <use xlink:href="./img/sprite.svg#loupe"></use>
                   </svg>
                </button>
                <form class="header__search-form" action="#" id="header__search-input">
                   <label for="search__form" class="visually-hidden">search</label>
-                  <input class="header__search-input" type="search" placeholder="Search">
+                  <input class="header__search-input" type="search" placeholder="Search" id="search__form">
                </form>
             </section>
          </div>
          <div>
-            <button class="header__menu-btn" type="button" id="header__menu-btn">
-               <svg class="white-icon" width="32" height="23">
+            <button class="header__menu-btn" type="button" id="header__menu-btn" aria-label="menu">
+               <svg class="white-icon">
                   <use xlink:href="./img/sprite.svg#burger"></use>
                </svg>
             </button>
             <a class="header__link" href="registration.html">
-               <svg class="white-icon" width="29" height="29">
+               <svg class="white-icon">
                   <use xlink:href="./img/sprite.svg#person"></use>
                </svg>
             </a>
             <a class="header__link" href="cart.html">
-               <svg class="white-icon" width="32" height="29">
+               <svg class="white-icon">
                   <use xlink:href="./img/sprite.svg#cart"></use>
                </svg>
             </a>
@@ -57,8 +65,8 @@
       <!--Menu_start-->
       <nav class="header__nav" id="menu">
          <div class="menu__wrapper" id="menu__wrapper">
-            <button class="header__exit-btn" type="button" id="header__exit-btn">
-               <svg class="exit-icon" width="13" height="13">
+            <button class="header__exit-btn" type="button" id="header__exit-btn" aria-label="exit">
+               <svg class="exit-icon">
                   <use xlink:href="./img/sprite.svg#exit"></use>
                </svg>
             </button>
@@ -112,7 +120,10 @@
 
       <!--Brand_start-->
       <section class="brand">
-         <img class="brand__img" src="./img/man.png" alt="man">
+         <picture class="brand__pic">
+            <source class="brand__webp" srcset="./img/man.webp" type="image/webp">
+            <img class="brand__img" src="./img/man.png" alt="man" loading="lazy">
+         </picture>
          <div class="brand__title-wrp">
             <h1 class="brand__title">the brand <span class="brand__subtitle">of luxerious <span
                      class="brand__subtitle-pink">fashion</span></span></h1>
@@ -160,7 +171,10 @@
             <li class="products__item">
                <section class="products__list-overlay">
                   <a href="#" class="products__link">
-                     <img class="products__item-img" src="./img/product-1.jpg" alt="product-1">
+                     <picture>
+                        <source srcset="./img/product-1.webp" type="image/webp">
+                        <img class="products__item-img" src="./img/product-1.jpg" alt="product-1" loading="lazy">
+                     </picture>
                      <div class="products__item-wrapper">
                         <h3 class="products__item-title">ellery x m'o capsule</h3>
                         <p class="products__item-text">Known for her sculptural takes on traditional tailoring,
@@ -170,18 +184,21 @@
                         <p class="products__item-price">$52.00</p>
                      </div>
                   </a>
-                  <button class="products__item-cart" type="button">
-                     <svg class="white-icon" width="27" height="25">
+                  <button class="products__item-cart" type="button" aria-label="cart">
+                     <svg class="white-icon">
                         <use xlink:href="./img/sprite.svg#cart"></use>
                      </svg>
-                     <span class="cart__text">Add to cart</span>
+                     <span class="products__item-cart-text">Add to cart</span>
                   </button>
                </section>
             </li>
             <li class="products__item">
                <section class="products__list-overlay">
                   <a href="#" class="products__link">
-                     <img class="products__item-img" src="./img/product-2.jpg" alt="product-2">
+                     <picture>
+                        <source srcset="./img/product-2.webp" type="image/webp">
+                        <img class="products__item-img" src="./img/product-2.jpg" alt="product-1" loading="lazy">
+                     </picture>
                      <div class="products__item-wrapper">
                         <h3 class="products__item-title">ellery x m'o capsule</h3>
                         <p class="products__item-text">Known for her sculptural takes on traditional tailoring,
@@ -191,18 +208,21 @@
                         <p class="products__item-price">$52.00</p>
                      </div>
                   </a>
-                  <button class="products__item-cart" type="button">
-                     <svg class="white-icon" width="27" height="25">
+                  <button class="products__item-cart" type="button" aria-label="cart">
+                     <svg class="white-icon">
                         <use xlink:href="./img/sprite.svg#cart"></use>
                      </svg>
-                     <span class="cart__text">Add to cart</span>
+                     <span class="products__item-cart-text">Add to cart</span>
                   </button>
                </section>
             </li>
             <li class="products__item">
                <section class="products__list-overlay">
                   <a href="#" class="products__link">
-                     <img class="products__item-img" src="./img/product-3.jpg" alt="product-3">
+                     <picture>
+                        <source srcset="./img/product-3.webp" type="image/webp">
+                        <img class="products__item-img" src="./img/product-3.jpg" alt="product-1" loading="lazy">
+                     </picture>
                      <div class="products__item-wrapper">
                         <h3 class="products__item-title">ellery x m'o capsule</h3>
                         <p class="products__item-text">Known for her sculptural takes on traditional tailoring,
@@ -212,18 +232,21 @@
                         <p class="products__item-price">$52.00</p>
                      </div>
                   </a>
-                  <button class="products__item-cart" type="button">
-                     <svg class="white-icon" width="27" height="25">
+                  <button class="products__item-cart" type="button" aria-label="cart">
+                     <svg class="white-icon">
                         <use xlink:href="./img/sprite.svg#cart"></use>
                      </svg>
-                     <span class="cart__text">Add to cart</span>
+                     <span class="products__item-cart-text">Add to cart</span>
                   </button>
                </section>
             </li>
             <li class="products__item">
                <section class="products__list-overlay">
                   <a href="#" class="products__link">
-                     <img class="products__item-img" src="./img/product-4.jpg" alt="product-4">
+                     <picture>
+                        <source srcset="./img/product-4.webp" type="image/webp">
+                        <img class="products__item-img" src="./img/product-4.jpg" alt="product-1" loading="lazy">
+                     </picture>
                      <div class="products__item-wrapper">
                         <h3 class="products__item-title">ellery x m'o capsule</h3>
                         <p class="products__item-text">Known for her sculptural takes on traditional tailoring,
@@ -233,18 +256,21 @@
                         <p class="products__item-price">$52.00</p>
                      </div>
                   </a>
-                  <button class="products__item-cart" type="button">
-                     <svg class="white-icon" width="27" height="25">
+                  <button class="products__item-cart" type="button" aria-label="cart">
+                     <svg class="white-icon">
                         <use xlink:href="./img/sprite.svg#cart"></use>
                      </svg>
-                     <span class="cart__text">Add to cart</span>
+                     <span class="products__item-cart-text">Add to cart</span>
                   </button>
                </section>
             </li>
             <li class="products__item">
                <section class="products__list-overlay">
                   <a href="#" class="products__link">
-                     <img class="products__item-img" src="./img/product-5.jpg" alt="product-5">
+                     <picture>
+                        <source srcset="./img/product-5.webp" type="image/webp">
+                        <img class="products__item-img" src="./img/product-5.jpg" alt="product-1" loading="lazy">
+                     </picture>
                      <div class="products__item-wrapper">
                         <h3 class="products__item-title">ellery x m'o capsule</h3>
                         <p class="products__item-text">Known for her sculptural takes on traditional tailoring,
@@ -254,18 +280,21 @@
                         <p class="products__item-price">$52.00</p>
                      </div>
                   </a>
-                  <button class="products__item-cart" type="button">
-                     <svg class="white-icon" width="27" height="25">
+                  <button class="products__item-cart" type="button" aria-label="cart">
+                     <svg class="white-icon">
                         <use xlink:href="./img/sprite.svg#cart"></use>
                      </svg>
-                     <span class="cart__text">Add to cart</span>
+                     <span class="products__item-cart-text">Add to cart</span>
                   </button>
                </section>
             </li>
             <li class="products__item">
                <section class="products__list-overlay">
                   <a href="#" class="products__link">
-                     <img class="products__item-img" src="./img/product-6.jpg" alt="product-6">
+                     <picture>
+                        <source srcset="./img/product-6.webp" type="image/webp">
+                        <img class="products__item-img" src="./img/product-6.jpg" alt="product-1" loading="lazy">
+                     </picture>
                      <div class="products__item-wrapper">
                         <h3 class="products__item-title">ellery x m'o capsule</h3>
                         <p class="products__item-text">Known for her sculptural takes on traditional tailoring,
@@ -275,17 +304,17 @@
                         <p class="products__item-price">$52.00</p>
                      </div>
                   </a>
-                  <button class="products__item-cart" type="button">
-                     <svg class="white-icon" width="27" height="25">
+                  <button class="products__item-cart" type="button" aria-label="cart">
+                     <svg class="white-icon">
                         <use xlink:href="./img/sprite.svg#cart"></use>
                      </svg>
-                     <span class="cart__text">Add to cart</span>
+                     <span class="products__item-cart-text">Add to cart</span>
                   </button>
                </section>
             </li>
          </ul>
          <div class="products__btn-wrapper">
-            <button class="products__btn" type="button">Browse All Product</button>
+            <button class="products__btn" type="button" aria-label="all_product">Browse All Product</button>
          </div>
       </section>
       <!-- Products_end -->
@@ -295,7 +324,7 @@
          <div class="container">
             <ul class="aside__list">
                <li class="aside__item">
-                  <svg class="pink-icon" width="46" height="32">
+                  <svg class="pink-icon">
                      <use xlink:href="./img/sprite.svg#truk"></use>
                   </svg>
                   <h3 class="aside__item-title">Free Delivery</h3>
@@ -305,7 +334,7 @@
                      extensive models.</p>
                </li>
                <li class="aside__item">
-                  <svg class="pink-icon" width="40" height="40">
+                  <svg class="pink-icon">
                      <use xlink:href="./img/sprite.svg#percent"></use>
                   </svg>
                   <h3 class="aside__item-title">Sales & discounts</h3>
@@ -314,7 +343,7 @@
                      with extensive models.</p>
                </li>
                <li class="aside__item">
-                  <svg class="pink-icon" width="48" height="35">
+                  <svg class="pink-icon">
                      <use xlink:href="./img/sprite.svg#crown"></use>
                   </svg>
                   <h3 class="aside__item-title">Quality assurance</h3>
@@ -336,7 +365,10 @@
          <section class="footer__about sub-rev">
             <h2 class="visually-hidden">Blockquote</h2>
             <div class="footer__review">
-               <img class="footer__review-icon" src="./img/face.png" alt="face">
+               <picture>
+                  <source srcset="./img/face.webp" type="image/webp">
+                  <img class="footer__review-icon" src="./img/face.png" alt="face" loading="lazy">
+               </picture>
                <blockquote class="footer__review-comment">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a
                   pulvinar
                   purus
@@ -352,14 +384,13 @@
                <p class="footer__subscribe__text">for our newletter and promotion</p>
                <form class="footer__subscribe__form" action="#">
                   <label for="email" class="visually-hidden">email</label>
-                  <input class="footer__subscribe__form-input" type="email" value="Enter Your Email">
-                  <button class="footer__subscribe__form-btn" type="submit">Subscribe</button>
+                  <input class="footer__subscribe__form-input" type="email" value="Enter Your Email" id="email">
+                  <button class="footer__subscribe__form-btn" type="submit" aria-label="subscribe">Subscribe</button>
                </form>
             </section>
          </section>
          <!-- Subscribe_end -->
       </div>
-
 
       <!-- Social_start -->
       <div class="footer__box__wrapper">
@@ -373,28 +404,28 @@
                <ul class="footer__socials__list">
                   <li class="footer__socials__item">
                      <a class="footer__socials__item-link" href="#">
-                        <svg class="black-icon" width="32" height="32">
+                        <svg class="black-icon">
                            <use xlink:href="./img/sprite.svg#facebook"></use>
                         </svg>
                      </a>
                   </li>
                   <li class="footer__socials__item">
                      <a class="footer__socials__item-link" href="#">
-                        <svg class="black-icon" width="33" height="32">
+                        <svg class="black-icon">
                            <use xlink:href="./img/sprite.svg#inst"></use>
                         </svg>
                      </a>
                   </li>
                   <li class="footer__socials__item">
                      <a class="footer__socials__item-link" href="#">
-                        <svg class="black-icon" width="32" height="32">
+                        <svg class="black-icon">
                            <use xlink:href="./img/sprite.svg#pin"></use>
                         </svg>
                      </a>
                   </li>
                   <li class="footer__socials__item">
                      <a class="footer__socials__item-link" href="#">
-                        <svg class="black-icon" width="32" height="32">
+                        <svg class="black-icon">
                            <use xlink:href="./img/sprite.svg#twit"></use>
                         </svg>
                      </a>

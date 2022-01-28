@@ -34,13 +34,13 @@
       max-width: 360px;
 
       @include tablet {
-         padding: 40px 0 95px 0;
+         margin: 40px 0 95px 0;
          min-width: 49%;
       }
 
       @include mobile {
          width: 100%;
-         padding: 40px 0;
+         margin: 40px 0;
       }
 
       &-main {
@@ -143,11 +143,11 @@
       max-width: 46%;
 
       @include tablet {
-         padding: 40px 0 0 22px;
+         margin: 40px 0 0 22px;
       }
 
       @include mobile {
-         padding: 0 0 96px 0;
+         margin: 0 0 96px 0;
          max-width: 100%
       }
 

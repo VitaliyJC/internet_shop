@@ -6,7 +6,12 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
-   <link rel="stylesheet" href="./css/style.css">
+   <link rel="preload" href="./fonts/lato-black.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="./fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="./fonts/lato-italic.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="./fonts/lato-light.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="preload" href="./fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
+   <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
 <body>
@@ -19,34 +24,37 @@
 
          <div class="header__logo-form-wrp">
             <a class="header__logo" href="index.html">
-               <img src="./img/logo.svg" alt="logo">
+               <picture>
+                  <source srcset="./img/logo.webp" type="image/webp">
+                  <img class="header__logo-img" src="./img/logo.png" alt="logo" loading="lazy">
+               </picture>
             </a>
             <section class="header__search">
                <h2 class="visually-hidden">Header search</h2>
-               <button class="header__search-btn" type="submit" id="header__search-btn">
-                  <svg class="white-icon" width="27" height="28">
+               <button class="header__search-btn" type="submit" id="header__search-btn" aria-label="search">
+                  <svg class="white-icon">
                      <use xlink:href="./img/sprite.svg#loupe"></use>
                   </svg>
                </button>
                <form class="header__search-form" action="#" id="header__search-input">
                   <label for="search__form" class="visually-hidden">search</label>
-                  <input class="header__search-input" type="search" placeholder="Search">
+                  <input class="header__search-input" type="search" placeholder="Search" id="search__form">
                </form>
             </section>
          </div>
          <div>
-            <button class="header__menu-btn" type="button" id="header__menu-btn">
-               <svg class="white-icon" width="32" height="23">
+            <button class="header__menu-btn" type="button" id="header__menu-btn" aria-label="menu">
+               <svg class="white-icon">
                   <use xlink:href="./img/sprite.svg#burger"></use>
                </svg>
             </button>
-            <a class="header__link" href="registration.html">
-               <svg class="white-icon" width="29" height="29">
+            <a class="header__link" href="#">
+               <svg class="white-icon">
                   <use xlink:href="./img/sprite.svg#person"></use>
                </svg>
             </a>
             <a class="header__link" href="cart.html">
-               <svg class="white-icon" width="32" height="29">
+               <svg class="white-icon">
                   <use xlink:href="./img/sprite.svg#cart"></use>
                </svg>
             </a>
@@ -57,8 +65,8 @@
       <!--Menu_start-->
       <nav class="header__nav" id="menu">
          <div class="menu__wrapper" id="menu__wrapper">
-            <button class="header__exit-btn" type="button" id="header__exit-btn">
-               <svg class="exit-icon" width="13" height="13">
+            <button class="header__exit-btn" type="button" id="header__exit-btn" aria-label="exit">
+               <svg class="exit-icon">
                   <use xlink:href="./img/sprite.svg#exit"></use>
                </svg>
             </button>
@@ -114,23 +122,23 @@
       </div>
       <div class="registration-wrapper container">
          <form class="registration__form" action="#">
-            <label for="search__form" class="visually-hidden">registration</label>
+            <label for="registration__form" class="visually-hidden">registration</label>
             <fieldset class="registration__form-main">
                <legend class="registration__form-text">Your Name</legend>
-               <input class="registration__form-name" type="text" placeholder="First Name">
+               <input class="registration__form-name" type="text" placeholder="First Name" id="registration__form">
                <input class="registration__form-name" type="text" placeholder="Last Name">
                <ul class="registration__form-list">
                   <li class="registration__form-item">
                      <input class="registration__form-sex" id="male" type="radio" name="sex" checked>
-                     <label class="registration__form__radio-text" for="sex">Male</label>
+                     <label class="registration__form__radio-text" for="male">Male</label>
                   </li>
                   <li class="registration__form-item">
                      <input class="registration__form-sex" id="female" type="radio" name="sex">
-                     <label class="registration__form__radio-text" for="sex">Female</label>
+                     <label class="registration__form__radio-text" for="female">Female</label>
                   </li>
                   <li class="registration__form-item">
                      <input class="registration__form-sex" id="other" type="radio" name="sex">
-                     <label class="registration__form__radio-text" for="sex">Other</label>
+                     <label class="registration__form__radio-text" for="other">Other</label>
                   </li>
                </ul>
             </fieldset>
@@ -143,9 +151,9 @@
                Please use 8 or more characters, with at least 1 number and a mixture of uppercase
                and lowercase letters
             </p>
-            <button class="registration__form-btn" type="submit">
+            <button class="registration__form-btn" type="submit" aria-label="registration">
                join now
-               <svg class="white-icon arrow-icon" width="17" height="10">
+               <svg class="white-icon arrow-icon">
                   <use xlink:href="./img/sprite.svg#arrow"></use>
                </svg>
             </button>
@@ -190,7 +198,10 @@
          <section class="footer__about sub-rev">
             <h2 class="visually-hidden">Blockquote</h2>
             <div class="footer__review">
-               <img class="footer__review-icon" src="./img/face.png" alt="face">
+               <picture>
+                  <source srcset="./img/face.webp" type="image/webp">
+                  <img class="footer__review-icon" src="./img/face.png" alt="face" loading="lazy">
+               </picture>
                <blockquote class="footer__review-comment">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a
                   pulvinar
                   purus
@@ -206,14 +217,13 @@
                <p class="footer__subscribe__text">for our newletter and promotion</p>
                <form class="footer__subscribe__form" action="#">
                   <label for="email" class="visually-hidden">email</label>
-                  <input class="footer__subscribe__form-input" type="email" value="Enter Your Email">
-                  <button class="footer__subscribe__form-btn" type="submit">Subscribe</button>
+                  <input class="footer__subscribe__form-input" type="email" value="Enter Your Email" id="email">
+                  <button class="footer__subscribe__form-btn" type="submit" aria-label="subscribe">Subscribe</button>
                </form>
             </section>
          </section>
          <!-- Subscribe_end -->
       </div>
-
 
       <!-- Social_start -->
       <div class="footer__box__wrapper">
@@ -227,28 +237,28 @@
                <ul class="footer__socials__list">
                   <li class="footer__socials__item">
                      <a class="footer__socials__item-link" href="#">
-                        <svg class="black-icon" width="32" height="32">
+                        <svg class="black-icon">
                            <use xlink:href="./img/sprite.svg#facebook"></use>
                         </svg>
                      </a>
                   </li>
                   <li class="footer__socials__item">
                      <a class="footer__socials__item-link" href="#">
-                        <svg class="black-icon" width="33" height="32">
+                        <svg class="black-icon">
                            <use xlink:href="./img/sprite.svg#inst"></use>
                         </svg>
                      </a>
                   </li>
                   <li class="footer__socials__item">
                      <a class="footer__socials__item-link" href="#">
-                        <svg class="black-icon" width="32" height="32">
+                        <svg class="black-icon">
                            <use xlink:href="./img/sprite.svg#pin"></use>
                         </svg>
                      </a>
                   </li>
                   <li class="footer__socials__item">
                      <a class="footer__socials__item-link" href="#">
-                        <svg class="black-icon" width="32" height="32">
+                        <svg class="black-icon">
                            <use xlink:href="./img/sprite.svg#twit"></use>
                         </svg>
                      </a>

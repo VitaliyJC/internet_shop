@@ -2,13 +2,22 @@
    display: flex;
    margin: 0 0 63px;
 
-   &__img {
+   @include tablet {
+      margin: 0 0 26px;
+   }
+
+   &__pic {
       background-color: $pink-bkg;
+   }
+
+   &__img {
+      width: 800px;
+      height: 764px;
       object-fit: cover;
 
       @include tablet {
          height: 367px;
-         width: 50%;
+         width: 100%;
       }
 
       @include mobile {
@@ -19,6 +28,28 @@
    &__title {
       @include font(48px, 58px, 900);
       text-transform: uppercase;
+
+      &::before {
+         background: $pink-btn;
+         width: 10px;
+         height: 92px;
+         position: absolute;
+         top: 336px;
+         left: 60px;
+         content: '';
+
+         @include tablet {
+            top: 140px;
+            left: 40px;
+         }
+
+         @include mobile {
+            width: 12px;
+            height: 61px;
+            top: 152px;
+            left: 56px;
+         }
+      }
 
       @include tablet {
          @include font(44px, 53px, 900);
@@ -44,28 +75,6 @@
             padding: 0 0 0 83px;
             min-height: 363px;
          }
-      }
-   }
-
-   &__title::before {
-      background: $pink-btn;
-      width: 10px;
-      height: 92px;
-      position: absolute;
-      top: 336px;
-      left: 60px;
-      content: '';
-
-      @include tablet {
-         top: 140px;
-         left: 40px;
-      }
-
-      @include mobile {
-         width: 12px;
-         height: 61px;
-         top: 152px;
-         left: 56px;
       }
    }
 
