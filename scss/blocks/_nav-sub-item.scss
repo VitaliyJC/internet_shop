@@ -12,30 +12,28 @@
       line-height: 17px;
       text-decoration: none;
       color: $grey-text;
-   }
+      transition: color $animation-speed;
 
-   &__link-person {
-      line-height: 17px;
-      text-decoration: none;
-      color: $pink-text;
-      text-transform: uppercase;
-   }
+      &:hover,
+      &:focus {
+         color: $pink-text;
+         cursor: pointer;
+      }
 
-   &__link:hover {
-      color: $pink-color;
-      cursor: pointer;
+      &:active {
+         color: $pink-effects;
+      }
 
-      transition: $animation-speed;
-   }
+      &-person {
+         line-height: 17px;
+         text-decoration: none;
+         color: $pink-text;
+         text-transform: uppercase;
 
-
-   &__link:active,
-   &__link-person:active {
-      color: $pink-effects;
-   }
-
-   &__link-person:active {
-      color: $red-text;
+         &:active {
+            color: $pink-effects;
+         }
+      }
    }
 }
 

@@ -33,23 +33,89 @@
 
       &--women {
          position: relative;
-         background-image: url(../img/sale-women.jpg);
-      }
+         background-image: url(../img/sale-women.webp);
+         background-color: $pink-bkg;
 
+         &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(33, 22, 22, 0.7);
+            transition: background $animation-speed;
+         }
+
+         &:hover::after {
+            background: rgba(33, 22, 22, 0.5);
+            cursor: pointer;
+         }
+
+         &:focus-within::after {
+            background: rgba(33, 22, 22, 0.5);
+         }
+      }
 
       &--man {
          position: relative;
-         background-image: url(../img/sale-man.jpg);
+         background-image: url(../img/sale-man.webp);
+         background-color: $pink-bkg;
+
+         &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(33, 22, 22, 0.7);
+            transition: background $animation-speed;
+         }
+
+         &:hover::after {
+            background: rgba(33, 22, 22, 0.5);
+            cursor: pointer;
+         }
+
+         &:focus-within::after {
+            background: rgba(33, 22, 22, 0.5);
+         }
       }
 
       &--kids {
          position: relative;
-         background-image: url(../img/sale-kids.jpg);
+         background-image: url(../img/sale-kids.webp);
+         background-color: $pink-bkg;
+
+         &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(33, 22, 22, 0.7);
+            transition: background $animation-speed;
+         }
+
+         &:hover::after {
+            background: rgba(33, 22, 22, 0.5);
+            cursor: pointer;
+         }
+
+         &:focus-within::after {
+            background: rgba(33, 22, 22, 0.5);
+         }
       }
 
       &--shoes {
          position: relative;
-         background-image: url(../img/sale-accesories.jpg);
+         background-image: url(../img/sale-accesories.webp);
+         background-color: $pink-bkg;
          background-repeat: no-repeat;
          min-height: 180px;
          margin: 30px 0 0 0;
@@ -57,11 +123,33 @@
 
          @include tablet {
             min-height: 116px;
+            margin: 19px 0 0 0;
          }
 
          @include mobile {
             min-height: 111px;
             background-position: -180px;
+         }
+
+         &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(33, 22, 22, 0.7);
+            transition: background $animation-speed;
+         }
+
+         &:hover::after {
+            background: rgba(33, 22, 22, 0.5);
+            cursor: pointer;
+         }
+
+         &:focus-within::after {
+            background: rgba(33, 22, 22, 0.5);
          }
       }
 
@@ -76,44 +164,6 @@
          text-transform: uppercase;
          color: $pink-text;
          @include font(24px, 29px, 700);
-      }
-
-      /* overlay_sales_start */
-
-      &--women::after,
-      &--man::after,
-      &--kids::after,
-      &--shoes::after {
-         content: '';
-         position: absolute;
-         left: 0;
-         right: 0;
-         top: 0;
-         bottom: 0;
-         z-index: 1;
-         background: rgba(33, 22, 22, 0.7);
-      }
-
-      &--women:hover::after,
-      &--man:hover::after,
-      &--kids:hover::after,
-      &--shoes:hover::after {
-         transition: .5s;
-         background: rgba(33, 22, 22, 0.5);
-         cursor: pointer;
-
-         transition: $animation-speed;
-      }
-
-      &--women:focus-within::after,
-      &--man:focus-within::after,
-      &--kids:focus-within::after,
-      &--shoes:focus-within::after {
-         transition: .5s;
-         background: rgba(33, 22, 22, 0.5);
-         cursor: pointer;
-
-         transition: $animation-speed;
       }
    }
 

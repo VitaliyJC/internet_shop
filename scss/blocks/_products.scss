@@ -50,19 +50,16 @@
 
       &-overlay {
          position: relative;
-      }
 
-      &-overlay:before {
-         content: '';
-         width: 360px;
-         min-height: 420px;
-         background: rgba(58, 56, 56, 0.86);
-         position: absolute;
-         top: 0;
-      }
-
-      &-overlay:before {
-         display: none;
+         &:before {
+            display: none;
+            content: '';
+            width: 360px;
+            min-height: 420px;
+            background: rgba(58, 56, 56, 0.86);
+            position: absolute;
+            top: 0;
+         }
       }
    }
 
@@ -98,7 +95,20 @@
                margin: 0 0 16px 0;
             }
          }
+      }
 
+      &:hover .products__item-cart,
+      &:hover .products__list-overlay::before {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      &:focus-within .products__item-cart,
+      &:focus-within .products__list-overlay::before {
+         display: flex;
+         align-items: center;
+         justify-content: center;
       }
 
       &-cart {
@@ -111,10 +121,63 @@
          transform: translate(-50%, -50%);
          width: 139px;
          height: 44px;
+         transition: border $animation-speed, color $animation-speed, display $animation-speed, align-items $animation-speed, justify-content $animation-speed;
+
+         &:hover {
+            cursor: pointer;
+         }
+
+         &:hover .white-icon {
+            fill: $pink-color;
+         }
+
+         &:hover &-text {
+            color: $pink-color;
+         }
+
+         &:hover {
+            border: 1px solid $pink-color;
+         }
+
+         &:focus-visible .white-icon {
+            fill: $pink-color;
+         }
+
+         &:focus-visible &-text {
+            color: $pink-color;
+         }
+
+         &:focus-visible {
+            border: 1px solid $pink-color;
+         }
+
+         &:focus-visible {
+            color: $white-text;
+         }
+
+         &:active .white-icon {
+            fill: $pink-effects;
+         }
+
+         &:active &-text {
+            color: $pink-effects;
+         }
+
+         &:active {
+            border: 1px solid $pink-effects;
+         }
+
+         &-text {
+            color: $white-text;
+            padding: 0 0 0 11px;
+            transition: color $animation-speed;
+         }
       }
 
       &-img {
          width: 360px;
+         height: 420px;
+         background-color: $grey-bkg;
       }
 
       &-title {
@@ -142,57 +205,6 @@
          background-color: $grey-bkg;
          width: 360px;
       }
-
-      &-cart:hover {
-         cursor: pointer;
-      }
-
-      &-cart:hover .white-icon {
-         fill: $pink-color;
-         transition: $animation-speed;
-      }
-
-      &-cart:hover .cart__text {
-         color: $pink-color;
-         transition: $animation-speed;
-      }
-
-      &-cart:hover {
-         border: 1px solid $pink-color;
-         transition: $animation-speed;
-      }
-
-      &-cart:focus-visible .white-icon {
-         fill: $pink-color;
-         transition: $animation-speed;
-      }
-
-      &-cart:focus-visible .cart__text {
-         color: $pink-color;
-         transition: $animation-speed;
-      }
-
-      &-cart:focus-visible {
-         border: 1px solid $pink-color;
-         transition: $animation-speed;
-      }
-
-      &-cart:focus-visible {
-         color: $white-text;
-         transition: $animation-speed;
-      }
-
-      &-cart:active .white-icon {
-         fill: $pink-effects;
-      }
-
-      &-cart:active .cart__text {
-         color: $pink-effects;
-      }
-
-      &-cart:active {
-         border: 1px solid $pink-effects;
-      }
    }
 
 
@@ -203,13 +215,13 @@
       width: 360px;
    }
 
-
    &__btn {
       background-color: $white-text-btm;
       padding: 15px 39px;
       text-decoration: none;
       color: $pink-text;
       border: 1px solid $pink-text;
+      transition: background-color $animation-speed, color $animation-speed;
 
       @include font(16px, 19px);
 
@@ -221,42 +233,19 @@
             margin: 0 0 65px 0;
          }
       }
+
+      &:hover {
+         background-color: $pink-color;
+         color: $white-text;
+      }
+
+      &:focus-visible {
+         background-color: $pink-color;
+         color: $white-text;
+      }
+
+      &:active {
+         background-color: $pink-text;
+      }
    }
-
-
-   &__btn:hover {
-      background-color: $pink-color;
-      color: $white-text;
-      transition: $animation-speed;
-   }
-
-   &__btn:focus-visible {
-      background-color: $pink-color;
-      color: $white-text;
-      transition: $animation-speed;
-   }
-
-   &__btn:active {
-      background-color: $pink-text;
-   }
-
-   &__item:hover .products__item-cart,
-   &__item:hover .products__list-overlay::before {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-   }
-
-   &__item:focus-within .products__item-cart,
-   &__item:focus-within .products__list-overlay::before {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-   }
-}
-
-
-.cart__text {
-   color: $white-text;
-   padding: 0 0 0 11px;
 }

@@ -2,6 +2,7 @@
    background-image: url(../img/footer_bg.jpg);
    background-repeat: no-repeat;
    background-size: cover;
+   background-color: $pink-bkg;
 
    &__about {
       display: flex;
@@ -35,6 +36,11 @@
          @include tablet {
             text-align: center;
          }
+      }
+
+      &-icon {
+         width: 96px;
+         height: 96px;
       }
    }
 
@@ -77,6 +83,20 @@
          padding: 27px 0 0 0;
          justify-content: center;
 
+         &:hover &-btn,
+         &:focus-within &-btn {
+            background-color: $pink-effects;
+            cursor: pointer;
+         }
+
+         &:active &__form-btn {
+            background-color: $pink-text;
+         }
+
+         &:focus-visible {
+            outline: 1px solid $pink-text;
+         }
+
          @include mobile {
             padding: 22px 0 0 0;
             width: 100%;
@@ -89,6 +109,10 @@
             padding: 10px 64px 10px 22px;
             opacity: 0.67;
 
+            &:focus-visible {
+               outline: 1px solid $pink-text;
+            }
+
             @include mobile {
                padding: 6px 61px 6px 22px;
             }
@@ -100,6 +124,11 @@
             border: 1px solid $pink-text;
             color: $white-text;
             padding: 16px 19px 16px 19px;
+            transition: background-color $animation-speed;
+
+            &:focus {
+               outline: 1px solid $pink-text;
+            }
 
             @include font(14px, 17px);
 
@@ -107,23 +136,6 @@
                padding: 14px 17px;
             }
          }
-      }
-
-      &__form:hover &__form-btn,
-      &__form:focus-within &__form-btn {
-         background-color: $pink-effects;
-         cursor: pointer;
-         transition: $animation-speed;
-      }
-
-      &__form:active &__form-btn {
-         background-color: $pink-text;
-      }
-
-      &__form-input:focus-visible,
-      &__form:focus-visible,
-      &__form-btn:focus {
-         outline: 1px solid $pink-text;
       }
    }
 
@@ -175,36 +187,22 @@
 
       &__item {
          margin: 0 7px 0 0;
-         background-color: #fff;
+         background-color: $white-text;
          width: 32px;
          height: 32px;
-      }
 
-      &__item:hover .black-icon,
-      &__item:focus-visible .black-icon {
-         background-color: $pink-btn;
-         transition: $animation-speed;
-      }
+         &-link {
 
-      &__item:active .black-icon {
-         background-color: $pink-effects;
-         transition: $animation-speed;
-      }
+            &:hover .black-icon,
+            &:focus-visible .black-icon {
+               fill: $white-text;
+               background-color: $pink-btn;
+            }
 
-      &__item-link:hover .black-icon,
-      &__item-link:focus-visible .black-icon {
-         fill: $white-text;
-         transition: $animation-speed;
-      }
-
-      &__item-link:hover .white-icon,
-      &__item-link:focus-visible .white-icon {
-         fill: $pink-btn;
-         transition: $animation-speed;
-      }
-
-      &__item-link:active .white-icon {
-         fill: $pink-effects;
+            &:active .black-icon {
+               background-color: $pink-effects;
+            }
+         }
       }
    }
 }

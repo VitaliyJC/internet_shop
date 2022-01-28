@@ -2,21 +2,34 @@
    background-color: $black;
    min-height: 75px;
 
-   &__link {
-      text-decoration: none;
-      margin: 0 0 0 33px;
-   }
-
    &__wrp {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 18px 0 18px;
+
    }
 
-   &__logo-form-wrp {
-      display: flex;
+   &__logo {
 
+      &-img {
+         width: 44px;
+         height: 38px;
+      }
+
+      &-form {
+         &-wrp {
+            display: flex;
+
+            @include tablet {
+               margin: 0 0 0 16px;
+            }
+
+            @include mobile {
+               margin: 0;
+            }
+         }
+      }
    }
 
    &__search {
@@ -25,13 +38,22 @@
 
 
       &-btn {
-         margin: 8px 0 0 41px;
+         margin: 0 0 0 41px;
          background-color: transparent;
          border: none;
-      }
 
-      &-btn:hover+.header__search-form {
-         display: block;
+         &:hover+.header__search-form {
+            display: block;
+         }
+
+         &:hover .white-icon {
+            fill: $pink-color;
+            cursor: pointer;
+         }
+
+         &:active .white-icon {
+            fill: $pink-effects;
+         }
       }
 
       &-form {
@@ -50,10 +72,43 @@
       }
    }
 
-   &__menu-btn {
-      border: none;
-      background-color: transparent;
+   &__menu {
+
+      &-btn {
+         border: none;
+         background-color: transparent;
+
+         &:hover .white-icon,
+         &:focus-visible .white-icon {
+            fill: $pink-color;
+            cursor: pointer;
+         }
+
+         &:active .white-icon {
+            fill: $pink-effects;
+         }
+      }
    }
+
+   &__link {
+      text-decoration: none;
+      margin: 0 0 0 33px;
+
+      &:hover .white-icon,
+      &:focus-visible .white-icon {
+         fill: $pink-color;
+         cursor: pointer;
+      }
+
+      &:active .white-icon {
+         fill: $pink-effects;
+      }
+
+      @include mobile {
+         display: none;
+      }
+   }
+
 
    &__nav {
       height: 764px;
@@ -65,87 +120,44 @@
       box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
       overflow: hidden;
 
-      transition: max-width .9s;
+      transition: max-width $animation-speed;
+
+      &-title {
+         @include font (100%, 17px, 900);
+         padding: 9px 0 0 0;
+         text-transform: uppercase;
+         color: $black;
+      }
+
+      &-list {
+         padding: 24px 0 0 0;
+      }
+
+      &-item:not(:first-child) {
+         padding: 20px 0 0 0;
+      }
    }
 
    &__exit-btn {
       background-color: transparent;
       border: none;
       align-self: flex-end;
+
+      &:hover .exit-icon,
+      &:focus-visible .exit-icon {
+         fill: $pink-color;
+         cursor: pointer;
+      }
+
+      &:active .exit-icon {
+         fill: $pink-effects;
+      }
    }
 
-   &__nav-title {
-      @include font (100%, 17px, 900);
-      padding: 9px 0 0 0;
-      text-transform: uppercase;
-      color: $black;
-   }
-
-   &__nav-list {
-      padding: 24px 0 0 0;
-   }
-
-   &__nav-item:not(:first-child) {
-      padding: 20px 0 0 0;
-   }
-
-   &__menu-btn:hover .white-icon,
-   &__search-btn:hover .white-icon,
-   &__link:hover .white-icon,
-   &__exit-btn:hover .exit-icon {
-      fill: $pink-color;
-      cursor: pointer;
-
-      transition: $animation-speed;
-   }
-
-
-   &__menu-btn:focus-visible .white-icon,
-   &__search-btn:focus-visible .white-icon,
-   &__link:focus-visible .white-icon,
-   &__exit-btn:focus-visible .exit-icon {
-      fill: $pink-color;
-      cursor: pointer;
-   }
-
-
-   &__menu-btn:active .white-icon,
-   &__search-btn:active .white-icon,
-   &__link:active .white-icon {
-      fill: $pink-effects;
-   }
-
-   &__exit-btn:active .exit-icon {
-      fill: $pink-effects;
-   }
 }
 
 .menu__wrapper {
    display: flex;
    flex-direction: column;
    padding: 16px 16px 0 34px;
-}
-
-@media (max-width: $tablet-width) {
-
-   .header {
-
-      &__logo-form-wrp {
-         margin: 0 0 0 16px;
-      }
-   }
-}
-
-@media (max-width: $mobile-width) {
-
-   .header {
-
-      &__logo-form-wrp {
-         margin: 0;
-      }
-
-      &__link {
-         display: none;
-      }
-   }
 }

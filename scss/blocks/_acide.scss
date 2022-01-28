@@ -22,6 +22,10 @@
       width: 32%;
       text-align: center;
 
+      @include tablet {
+         width: 40%;
+      }
+
       @include mobile {
          width: 100%;
       }
